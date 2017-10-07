@@ -23,7 +23,8 @@
         "styles.css"
       ],
       "scripts": [
-        "assets/js/popper.min.js"
+        "assets/js/popper.min.js",
+        "../node_modules/particles.js/particles.js"
       ],
       "environmentSource": "environments/environment.ts",
       "environments": {

@@ -1,5 +1,60 @@
 .home-container {
     height: 100vh;
     width: 100vw;
-    background-color: #c62828;
+    position: absolute;
+    z-index: 2
+}
+
+.background {
+    height: 100vh;
+    width: 100vw;
+    z-index: 0;
+    background-image: linear-gradient(-225deg, #E91E63 0%, #e53935 48%, #b71c1c 100%);
+    position: absolute;
+}
+
+#particles-js {
+    position: absolute;
+    z-index: 1;
+    height: 100vh;
+    width: 100vw;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}
+
+.router-card {
+    height: 250px;
+    width: 250px;
+    color: #eeeeee;
+    text-decoration: none;
+    background-color: rgba(238,238,238, 0.3);
+    border-radius: 0.3em;
+}
+
+.router-card mat-icon {
+    width: 120px;
+    height: 120px;
+}
+
+.router-card-icon {
+    font-size: 120px;
+    color: #eeeeee;
+}
+
+.router-card-text {
+    font-weight: 500;
+    font-size: 35px;
+    display: block;
+    color: #eeeeee;
+    text-decoration: none;
+}
+
+.home-title {
+    position: absolute;
+    z-index: 6;
+    font-weight: 300;
+    width: 100%;
+    top: 15%;
+    font-size: 6rem;
 }

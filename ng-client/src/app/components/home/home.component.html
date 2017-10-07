@@ -1,11 +1,32 @@
+<div class="background"></div>
+<div id="particles-js"></div>
+
+<h1 class="animated fadeIn mb-4 white-text mb-4 text-center home-title">CryptoPill</h1>
+
 <div class="container-fluid home-container">
-  <div style="height: 100vh">
+    <div style="height: 100vh">
         <div class="flex-center flex-column">
-            <h1 class="animated fadeIn mb-4">Material Design for Bootstrap</h1>
 
-            <h5 class="animated fadeIn mb-3">Thank you for using our product. We're glad you're with us.</h5>
+            <div class="row">
+                <div class="col-6">
+                    <a routerLink="/physician" class="waves-effect waves-light router-card text-center">
+                        <div class="flex-center flex-column">
+                            <mat-icon class="router-card-icon">healing</mat-icon>
+                            <span class="router-card-text">Physician</span>
+                        </div>
+                    </a>
+                </div>
 
-            <p class="animated fadeIn text-muted">MDB Team</p>
+                <div class="col-6">
+                    <a routerLink="/pharmacist" class="waves-effect waves-light router-card text-center">
+                        <div class="flex-center flex-column">
+                            <mat-icon class="router-card-icon">receipt</mat-icon>
+                            <span class="router-card-text">Pharmacist</span>
+                        </div>
+                    </a>
+                </div>
+
+            </div>
         </div>
     </div>
 </div>
