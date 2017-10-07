@@ -17,8 +17,18 @@
     display: inline-block;
     margin-left: 10px;
     margin-right: 10px;
+    background-color: #EEEEEE;
 }
 
 .medicine-card span {
     display: block;
+}
+
+mat-icon.large-icon {
+    width: 80px;
+    height: 80px;
+}
+
+.large-icon {
+    font-size: 80px;
 }

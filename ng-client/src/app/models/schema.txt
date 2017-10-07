@@ -1,0 +1,13 @@
+export class Patient {
+    address: string;
+    name: string;
+    num_prescriptions: number;
+    medicines: Medicine [];
+}
+
+export class Medicine {
+    name: string;
+    doi: string;
+    num_capsules: number;
+    strength: number;
+}

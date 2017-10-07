@@ -1,6 +1,6 @@
 <app-navbar></app-navbar>
 
-<div class="container mt-4">
+<div class="container mt-4 pb-4">
   <div class="row top-row">
     <div class="col-md-6">
       <div class="card h-100">
@@ -84,16 +84,46 @@
 
   <div class="row mt-4">
     <mat-card class="w-100">
-      <mat-card-title>Patient Medication</mat-card-title>
+      <mat-card-title class="text-center">Patient Medication</mat-card-title>
 
       <mat-card-content class="medicine-card-container">
-        <div style="width: auto; white-space: nowrap">
-          <div *ngFor="let medicine of medicines" class="medicine-card card">
-            <span>{{medicine.name}}</span>
-            <span>{{medicine.strength}}</span>
-            <span>{{medicine.num_capsules}}</span>
-            <span>{{medicine.doi}}</span>
-          </div>
+        <div style="width: auto; white-space: nowrap" class="p-3">
+          <mat-card *ngFor="let medicine of medicines" class="medicine-card">
+            <div class="row justify-content-center">
+              <i class="fa fa-flask large-icon grey-text"></i>
+            </div>
+
+            <div class="row justify-content-center">
+              <span class="font-weight-bold text-uppercase p-2">{{medicine.name}}</span>
+            </div>
+            
+            <div class="row">
+              <div class="col-6 p-0 text-left">
+                <span>Strength:</span>
+              </div>
+              <div class="col-6 p-0 text-right">
+                <span class="font-weight-bold">{{medicine.strength}} mg</span>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-6 p-0 text-left">
+                <span>No:</span>
+              </div>
+              <div class="col-6 p-0 text-right">
+                <span class="font-weight-bold">{{medicine.num_capsules}}</span>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-6 p-0 text-left">
+                <span>DOI:</span>
+              </div>
+              <div class="col-6 p-0 text-right">
+                <span class="font-weight-bold">{{medicine.doi}}</span>
+              </div>
+            </div>
+          </mat-card>
         </div>
       </mat-card-content>
     </mat-card>
