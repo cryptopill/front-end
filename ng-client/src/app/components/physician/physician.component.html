@@ -1,3 +1,57 @@
-<p>
-  physician works!
-</p>
+<app-navbar></app-navbar>
+
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-md-6">
+
+      <!--Form with header-->
+      <div class="card">
+
+        <!--Header-->
+        <div class="header pt-3 bg-unique">
+
+          <div class="row d-flex justify-content-center">
+            <h3 class="white-text pt-3 pb-3 font-bold">Distribute Opioids</h3>
+          </div>
+
+        </div>
+        <!--Header-->
+
+        <div class="card-body mx-4 mt-4">
+
+          <!--Body-->
+          <mat-form-field class="w-100">
+            <mat-icon matPrefix class="mr-2">battery_std</mat-icon>
+            <input matInput placeholder="Number of capsules" class="w-100">
+          </mat-form-field>
+
+          <mat-form-field class="w-100">
+            <mat-icon matPrefix class="mr-2">battery_std</mat-icon>
+            <input matInput placeholder="mg/capsule" class="w-100">
+          </mat-form-field>
+          
+          <mat-form-field class="w-100">
+            <mat-icon matPrefix class="mr-2">person</mat-icon>
+            <input matInput placeholder="Patient address" class="w-100">
+          </mat-form-field>
+
+          <!--Grid row-->
+          <div class="row d-flex align-items-center mb-4">
+
+            <!--Grid column-->
+            <div class="col text-center">
+              <div class="text-center mt-3">
+                <button type="button" mat-raised-button color="primary">Distribute</button>
+              </div>
+            </div>
+
+          </div>
+          <!--Grid row-->
+        </div>
+
+      </div>
+      <!--/Form with header-->
+
+    </div>
+  </div>
+</div>
