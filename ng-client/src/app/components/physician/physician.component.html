@@ -1,7 +1,7 @@
 <app-navbar></app-navbar>
 
 <div class="container mt-4">
-  <div class="row">
+  <div class="row top-row">
     <div class="col-md-6">
       <div class="card h-100">
 
@@ -15,8 +15,15 @@
         </div>
         <!--Header-->
 
-        <div class="card-body scroll-body mx-4 mt-4">
-          
+        <div class="card-body p-0 mb-3 scroll-body mx-4 mt-4">
+          <mat-nav-list>
+            <mat-list-item *ngFor="let patient of patients">
+              <mat-icon mat-list-icon>person</mat-icon>
+              <span matLine><strong>{{patient.name}}</strong></span>
+              <span matLine>{{patient.num_prescriptions}} prescriptions</span>
+              <span matLine>Address: {{patient.address}}</span>
+            </mat-list-item>
+          </mat-nav-list>
         </div>
 
       </div>
@@ -49,7 +56,7 @@
             <mat-icon matPrefix class="mr-2">battery_std</mat-icon>
             <input matInput placeholder="mg/capsule" class="w-100">
           </mat-form-field>
-          
+
           <mat-form-field class="w-100">
             <mat-icon matPrefix class="mr-2">person</mat-icon>
             <input matInput placeholder="Patient address" class="w-100">
@@ -73,5 +80,22 @@
       <!--/Form with header-->
 
     </div>
+  </div>
+
+  <div class="row mt-4">
+    <mat-card class="w-100">
+      <mat-card-title>Patient Medication</mat-card-title>
+
+      <mat-card-content class="medicine-card-container">
+        <div style="width: auto; white-space: nowrap">
+          <div *ngFor="let medicine of medicines" class="medicine-card card">
+            <span>{{medicine.name}}</span>
+            <span>{{medicine.strength}}</span>
+            <span>{{medicine.num_capsules}}</span>
+            <span>{{medicine.doi}}</span>
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
   </div>
 </div>

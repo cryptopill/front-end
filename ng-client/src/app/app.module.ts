@@ -5,7 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 /* Angular Material */
-import { MatButtonModule, MatIconModule, MatInputModule } from '@angular/material';
+import { MatButtonModule, MatIconModule, MatInputModule, MatListModule, MatCardModule } from '@angular/material';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
@@ -25,7 +25,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     BrowserModule,
     FormsModule,
     BrowserAnimationsModule,
-    MatButtonModule, MatIconModule, MatInputModule,
+    MatButtonModule, MatIconModule, MatInputModule, MatListModule, MatCardModule,
     RouterModule.forRoot([
       {
         path: '',

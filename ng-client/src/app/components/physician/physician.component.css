@@ -2,3 +2,23 @@
     overflow-y: auto;
     height: 100%;
 }
+
+.top-row {
+    max-height: 50vh;
+}
+
+.medicine-card-container {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.medicine-card {
+    width: 200px;
+    display: inline-block;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.medicine-card span {
+    display: block;
+}
