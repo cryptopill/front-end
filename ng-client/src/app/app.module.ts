@@ -9,13 +9,15 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { PhysicianComponent } from './components/physician/physician.component';
 import { PharmacistComponent } from './components/pharmacist/pharmacist.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     PhysicianComponent,
-    PharmacistComponent
+    PharmacistComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
