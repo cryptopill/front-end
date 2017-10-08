@@ -92,7 +92,7 @@
 
       <mat-card-content class="medicine-card-container">
         <div style="width: auto; white-space: nowrap" class="p-3">
-          <mat-card *ngFor="let medicine of medicines" class="medicine-card waves-effect waves-light">
+          <mat-card *ngFor="let medicine of medicines" (click)="selectMedicine(medicine)" class="medicine-card waves-effect waves-light">
             <div class="row justify-content-center">
               <i class="fa fa-flask large-icon grey-text"></i>
             </div>

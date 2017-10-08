@@ -31,4 +31,8 @@ export class PhysicianComponent implements OnInit {
     console.log(patient)
   }
 
+  selectMedicine(medicine: Medicine) {
+    console.log(medicine.medAddress)
+  }
+
 }
