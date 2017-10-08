@@ -1,0 +1,4 @@
+<div class="row mt-4 justify-content-center">
+  <qr-scanner [debug]="false" [mirror]="false" [stopAfterScan]="false" [updateTime]="1000"
+    (onRead)="decodedOutput($event)"></qr-scanner>
+</div>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DialogService } from '../../services/dialog.service';
 
 @Component({
   selector: 'app-pharmacist',
@@ -7,22 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PharmacistComponent implements OnInit {
 
-  showQRScanner: boolean
+  constructor(public _dialogService: DialogService) {
 
-  constructor() {
-    this.showQRScanner = true
   }
 
   ngOnInit() {
   }
 
-  decodedOutput($event) {
-    this.showQRScanner = false
-    alert($event)
-    setTimeout(() => {
-      this.showQRScanner = true
-      console.log('showing qr')
-    }, 2000)
+  openScanner() {
+    this._dialogService
+      .showScannerDialog()
+      .subscribe(res => console.log(res))
   }
 
 }

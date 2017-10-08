@@ -5,18 +5,26 @@
     <h1 class="font-weight-bold m-0">Scan QR Code</h1>
   </div>
 
-  <div class="row justify-content-center mt-3">
-    <button mat-raised-button color="primary"><span class="text-uppercase">Scan Prescription Barcode</span></button>
-  </div>
+  <div style="height: 7rem"></div>
 
   <div class="row justify-content-center mt-3">
-    <button mat-raised-button color="primary"><span class="text-uppercase">Scan Patient Barcode</span></button>
+    <button mat-raised-button color="primary" style="width: 100%; max-width: 250px;" (click)="openScanner()"><span class="text-uppercase">Scan Prescription Barcode</span></button>
+  </div>
+
+  <div class="row justify-content-center mt-3 mb-4">
+    <button mat-raised-button color="primary" style="width: 100%; max-width: 250px;" (click)="openScanner()"><span class="text-uppercase">Scan Patient Barcode</span></button>
+  </div>
+
+  <div style="height: 4rem"></div>
+
+  <div class="row mt-4 justify-content-center">
+    <div class="col-md-6 col-sm-12 text-center">Prescription Address:</div>
+    <div class="col-md-6 col-sm-12 text-center font-weight-bold">test</div>
+  </div>
+
+  <div class="row mt-2 justify-content-center">
+    <div class="col-md-6 col-sm-12 text-center">Patient Address:</div>
+    <div class="col-md-6 col-sm-12 text-center font-weight-bold">test</div>
   </div>
 
 </div>
-<!--
-<div class="row mt-4 justify-content-center">
-  <qr-scanner *ngIf="showQRScanner" [debug]="false" [mirror]="false" [stopAfterScan]="false" [updateTime]="1000"
-    (onRead)="decodedOutput($event)"></qr-scanner>
-</div>
-  -->

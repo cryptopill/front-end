@@ -5,7 +5,6 @@ import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpModule } from '@angular/http';
 import { DialogsModule } from './modules/dialogs/dialogs.module';
-import { QrScannerModule } from 'angular2-qrscanner';
 
 /* Angular Material */
 import { MatButtonModule, MatIconModule, MatInputModule, MatListModule, MatCardModule } from '@angular/material';
@@ -33,7 +32,6 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     BrowserAnimationsModule,
     HttpModule,
     DialogsModule,
-    QrScannerModule,
     MatButtonModule, MatIconModule, MatInputModule, MatListModule, MatCardModule,
     RouterModule.forRoot([
       {
