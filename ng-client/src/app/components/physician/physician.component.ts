@@ -29,6 +29,7 @@ export class PhysicianComponent implements OnInit, OnDestroy {
     this._dataService.getUsers()
       .subscribe(patients => this.patients = patients)
 
+      /*
     this.connection = this._dataService.getUpdate()
       .subscribe(data => {
         this._dataService.getUsers()
@@ -46,6 +47,7 @@ export class PhysicianComponent implements OnInit, OnDestroy {
             this.patients = patients
           })
       })
+        */
   }
 
   ngOnDestroy() {
