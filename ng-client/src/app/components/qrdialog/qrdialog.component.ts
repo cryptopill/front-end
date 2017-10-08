@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialogRef } from '@angular/material';
+import { QRCodeComponent } from 'angular2-qrcode';
 
 @Component({
   selector: 'app-qrdialog',

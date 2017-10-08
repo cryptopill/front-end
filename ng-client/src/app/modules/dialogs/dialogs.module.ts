@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MatDialogModule, MatButtonModule } from '@angular/material';
+import { MatDialogModule, MatButtonModule, MatIconModule } from '@angular/material';
+import { QRCodeModule } from 'angular2-qrcode';
 
 import { QrdialogComponent } from '../../components/qrdialog/qrdialog.component';
 
@@ -9,7 +10,8 @@ import { DialogService } from '../../services/dialog.service';
 @NgModule({
   imports: [
     CommonModule,
-    MatButtonModule, MatDialogModule
+    QRCodeModule,
+    MatButtonModule, MatDialogModule, MatIconModule
   ],
   exports: [
     QrdialogComponent

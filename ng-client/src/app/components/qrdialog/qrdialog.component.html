@@ -1,3 +1,10 @@
-<p>{{ address }}</p>
-<button type="button" mat-raised-button (click)="_dialogRef.close(true)">OK</button>
-<button type="button" mat-button (click)="_dialogRef.close()">Cancel</button>
+<div>
+  <qr-code [value]="address" [size]="350"></qr-code>
+</div>
+
+<div class="row justify-content-center mt-3">
+  <button type="button" mat-button color="warn" (click)="_dialogRef.close(true)">
+    <mat-icon>close</mat-icon>
+    <span>CLOSE</span>
+  </button>
+</div>
