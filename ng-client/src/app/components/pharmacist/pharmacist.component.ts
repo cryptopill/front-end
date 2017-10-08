@@ -7,9 +7,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PharmacistComponent implements OnInit {
 
-  constructor() { }
+  showQRScanner: boolean
+
+  constructor() {
+    this.showQRScanner = true
+  }
 
   ngOnInit() {
+  }
+
+  decodedOutput($event) {
+    this.showQRScanner = false
+    alert($event)
+    setTimeout(() => {
+      this.showQRScanner = true
+      console.log('showing qr')
+    }, 2000)
   }
 
 }
