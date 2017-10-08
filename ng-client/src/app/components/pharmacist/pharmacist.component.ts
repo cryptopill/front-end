@@ -8,6 +8,9 @@ import { DialogService } from '../../services/dialog.service';
 })
 export class PharmacistComponent implements OnInit {
 
+  patientAddress: string;
+  medicineAddress: string;
+
   constructor(public _dialogService: DialogService) {
 
   }
@@ -15,10 +18,18 @@ export class PharmacistComponent implements OnInit {
   ngOnInit() {
   }
 
-  openScanner() {
+  openScanner(addressRef) {
     this._dialogService
       .showScannerDialog()
-      .subscribe(res => console.log(res))
+      .subscribe(res => {
+        if(res) {
+          if(addressRef === 'p')
+            this.patientAddress = res
+
+          if(addressRef === 'm')
+            this.medicineAddress = res
+        }
+      })
   }
 
 }
