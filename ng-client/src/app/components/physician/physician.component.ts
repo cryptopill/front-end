@@ -13,13 +13,16 @@ import { DialogService } from '../../services/dialog.service';
 export class PhysicianComponent implements OnInit, OnDestroy {
   connection;
 
-  patients: Patient []
-  medicines: Medicine []
+  patients: Patient[]
+  medicines: Medicine[]
 
   selectedPatient: Patient
+  selectedMedicine: Medicine
+
+  newMedicine: Medicine = new Medicine()
 
   constructor(private _dataService: DataService, public _dialogService: DialogService) {
-    
+
   }
 
   ngOnInit() {
@@ -27,8 +30,21 @@ export class PhysicianComponent implements OnInit, OnDestroy {
       .subscribe(patients => this.patients = patients)
 
     this.connection = this._dataService.getUpdate()
-      .subscribe(meds => {
-        console.log(meds)
+      .subscribe(data => {
+        this._dataService.getUsers()
+          .subscribe(patients => {
+
+            if (this.patients) {
+              this.patients.forEach(patient => {
+                if (this.selectedPatient && patient.address === this.selectedPatient.address) {
+                  this.selectedPatient = patient
+                  this.medicines = patient.medicines
+                }
+              })
+            }
+
+            this.patients = patients
+          })
       })
   }
 
@@ -47,6 +63,31 @@ export class PhysicianComponent implements OnInit, OnDestroy {
     this._dialogService
       .showQRDialog(medicine.medAddress, medicine.distributed)
       .subscribe(res => console.log(res))
+  }
+
+  sendMedicine() {
+    var today: any = new Date();
+    var dd: any = today.getDate();
+    var mm: any = today.getMonth() + 1; //January is 0!
+
+    var yyyy = today.getFullYear();
+    if (dd < 10) {
+      dd = '0' + dd;
+    }
+    if (mm < 10) {
+      mm = '0' + mm;
+    }
+    today = dd + '/' + mm + '/' + yyyy;
+
+    this.newMedicine.doi = today
+    this.newMedicine.distributed = false
+    this.newMedicine.medAddress = Date.now().toString()
+    console.log(this.newMedicine)
+    this._dataService.sendNewMedicine(this.newMedicine)
+      .subscribe(res => {
+        this.newMedicine = new Medicine()
+        console.log(res)
+      })
   }
 
 }

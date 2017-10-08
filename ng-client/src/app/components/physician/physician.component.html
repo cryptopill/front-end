@@ -50,17 +50,22 @@
               <!--Body-->
               <mat-form-field class="w-100">
                 <mat-icon matPrefix class="mr-2">battery_std</mat-icon>
-                <input matInput placeholder="Number of capsules" class="w-100">
+                <input matInput placeholder="Name of medicine" [(ngModel)]="newMedicine.name" class="w-100">
               </mat-form-field>
 
               <mat-form-field class="w-100">
                 <mat-icon matPrefix class="mr-2">battery_std</mat-icon>
-                <input matInput placeholder="mg/capsule" class="w-100">
+                <input matInput placeholder="Number of capsules" [(ngModel)]="newMedicine.capsules" class="w-100">
+              </mat-form-field>
+
+              <mat-form-field class="w-100">
+                <mat-icon matPrefix class="mr-2">battery_std</mat-icon>
+                <input matInput placeholder="mg/capsule" [(ngModel)]="newMedicine.density" class="w-100">
               </mat-form-field>
 
               <mat-form-field class="w-100">
                 <mat-icon matPrefix class="mr-2">person</mat-icon>
-                <input matInput placeholder="Patient address" class="w-100">
+                <input matInput placeholder="Patient address" [(ngModel)]="newMedicine.patientAddress" class="w-100">
               </mat-form-field>
 
               <!--Grid row-->
@@ -69,7 +74,7 @@
                 <!--Grid column-->
                 <div class="col text-center">
                   <div class="text-center mt-3">
-                    <button type="button" mat-raised-button color="primary">Distribute</button>
+                    <button type="button" mat-raised-button color="primary" (click)="sendMedicine()">Distribute</button>
                   </div>
                 </div>
 
