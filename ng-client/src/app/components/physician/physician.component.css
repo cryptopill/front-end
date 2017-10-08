@@ -24,6 +24,16 @@
     display: block;
 }
 
+.large-icon {
+    -webkit-transition: all 250ms ease-in-out;
+    -moz-transition: all 250ms ease-in-out;
+    transition: all 250ms ease-in-out;
+}
+
+.large-icon:hover {
+    color: #880E4F !important;
+}
+
 mat-icon.large-icon {
     width: 80px;
     height: 80px;
