@@ -66,6 +66,10 @@ export class PhysicianComponent implements OnInit, OnDestroy {
   }
 
   sendMedicine() {
+    if(!(this.newMedicine.capsules && this.newMedicine.name 
+      && this.newMedicine.patientAddress && this.newMedicine.density))
+        return;
+
     var today: any = new Date();
     var dd: any = today.getDate();
     var mm: any = today.getMonth() + 1; //January is 0!

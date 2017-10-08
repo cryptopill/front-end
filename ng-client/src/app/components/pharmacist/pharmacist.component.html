@@ -45,4 +45,18 @@
     </mat-card>
   </div>
 
+  <div *ngIf="failureMedicine" class="row justify-content-center mt-4">
+    <mat-card class="bg-danger flex-center flex-column">
+      <div class="row white-text">
+        <div class="col-2">
+          <mat-icon>cancel</mat-icon>
+        </div>
+
+        <div class="col-10 font-weight-bold">
+          This prescription has already been distributed!
+        </div>
+      </div>
+    </mat-card>
+  </div>
+
 </div>

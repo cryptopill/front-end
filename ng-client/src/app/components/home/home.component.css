@@ -24,8 +24,10 @@
 }
 
 .router-card {
-    height: 250px;
-    width: 250px;
+    height: 55vw;
+    width: 55vw;
+    max-height: 250px;
+    max-width: 250px;
     color: #eeeeee;
     text-decoration: none;
     background-color: rgba(238,238,238, 0.3);
@@ -55,6 +57,6 @@
     z-index: 6;
     font-weight: 300;
     width: 100%;
-    top: 15%;
-    font-size: 6rem;
+    top: 10%;
+    font-size: 4em;
 }
