@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Patient } from '../../models/patient';
 import { Medicine } from '../../models/medicine';
 
@@ -10,20 +10,30 @@ import { DialogService } from '../../services/dialog.service';
   templateUrl: './physician.component.html',
   styleUrls: ['./physician.component.css']
 })
-export class PhysicianComponent implements OnInit {
-  
+export class PhysicianComponent implements OnInit, OnDestroy {
+  connection;
+
   patients: Patient []
   medicines: Medicine []
 
   selectedPatient: Patient
 
   constructor(private _dataService: DataService, public _dialogService: DialogService) {
-
+    
   }
 
   ngOnInit() {
     this._dataService.getUsers()
       .subscribe(patients => this.patients = patients)
+
+    this.connection = this._dataService.getUpdate()
+      .subscribe(meds => {
+        console.log(meds)
+      })
+  }
+
+  ngOnDestroy() {
+    this.connection.unsubscribe()
   }
 
   selectPatient(patient: Patient) {
@@ -37,7 +47,6 @@ export class PhysicianComponent implements OnInit {
     this._dialogService
       .showQRDialog(medicine.medAddress, medicine.distributed)
       .subscribe(res => console.log(res))
-
   }
 
 }
