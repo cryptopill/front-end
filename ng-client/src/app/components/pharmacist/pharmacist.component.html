@@ -5,7 +5,7 @@
     <h1 class="font-weight-bold m-0">Scan QR Code</h1>
   </div>
 
-  <div style="height: 7rem"></div>
+  <div style="height: 2rem"></div>
 
   <div class="row justify-content-center mt-3">
     <button mat-raised-button color="primary" style="width: 100%; max-width: 250px;" (click)="openScanner('m')"><span class="text-uppercase">Scan Prescription Barcode</span></button>
@@ -15,7 +15,7 @@
     <button mat-raised-button color="primary" style="width: 100%; max-width: 250px;" (click)="openScanner('p')"><span class="text-uppercase">Scan Patient Barcode</span></button>
   </div>
 
-  <div style="height: 4rem"></div>
+  <div style="height: 2rem"></div>
 
   <div *ngIf="medicineAddress" class="row mt-4 justify-content-center">
     <div class="col-md-6 col-sm-12 text-center">Prescription Address:</div>
@@ -25,6 +25,24 @@
   <div *ngIf="patientAddress" class="row mt-2 justify-content-center">
     <div class="col-md-6 col-sm-12 text-center">Patient Address:</div>
     <div class="col-md-6 col-sm-12 text-center font-weight-bold">{{patientAddress}}</div>
+  </div>
+
+  <div *ngIf="medicineAddress&&patientAddress" class="row justify-content-center mt-4">
+    <button mat-raised-button color="accent" style="width: 100%; max-width: 250px;" (click)="sendPrescription()"><span class="text-uppercase">Scan Patient Barcode</span></button>
+  </div>
+
+  <div *ngIf="successMedicine" class="row justify-content-center mt-4">
+    <mat-card class="bg-success flex-center flex-column">
+      <div class="row white-text">
+        <div class="col-2">
+          <mat-icon>check_circle</mat-icon>
+        </div>
+
+        <div class="col-10 font-weight-bold">
+          This prescription is valid!
+        </div>
+      </div>
+    </mat-card>
   </div>
 
 </div>

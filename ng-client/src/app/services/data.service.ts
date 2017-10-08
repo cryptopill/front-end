@@ -30,7 +30,7 @@ export class DataService {
     let headers = new Headers({ 'Content-Type': 'application/json' });
     let options = new RequestOptions({ headers: headers });
     let body = JSON.stringify(addresses);
-    return this._http.post(this.url + '/api/updatePrescription', body, options ).map((res: Response) => res);
+    return this._http.post(this.url + '/api/registerPrescription', body, options ).map((res: Response) => res.json());
   }
 
   getUpdate() {

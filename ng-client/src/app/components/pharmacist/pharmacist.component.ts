@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DialogService } from '../../services/dialog.service';
+import { DataService } from '../../services/data.service';
 
 @Component({
   selector: 'app-pharmacist',
@@ -8,10 +9,11 @@ import { DialogService } from '../../services/dialog.service';
 })
 export class PharmacistComponent implements OnInit {
 
-  patientAddress: string;
-  medicineAddress: string;
+  patientAddress: string
+  medicineAddress: string
+  successMedicine: boolean
 
-  constructor(public _dialogService: DialogService) {
+  constructor(public _dialogService: DialogService, private _dataService: DataService) {
 
   }
 
@@ -30,6 +32,15 @@ export class PharmacistComponent implements OnInit {
             this.medicineAddress = res
         }
       })
+  }
+
+  sendPrescription() {
+    this._dataService.registerPrescription({
+      medAddress: this.medicineAddress,
+      patientAddress: this.patientAddress
+    }).subscribe(res => {
+      this.successMedicine = res
+    })
   }
 
 }
