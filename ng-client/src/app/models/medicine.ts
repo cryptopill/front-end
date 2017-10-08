@@ -1,6 +1,9 @@
 export class Medicine {
     name: string;
     doi: string;
-    num_capsules: number;
-    strength: number;
+    capsules: number;
+    density: number;
+    medAddress: string;
+    patientAddress: string;
+    distributed: boolean;
 }

@@ -3,9 +3,13 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpModule } from '@angular/http';
 
 /* Angular Material */
 import { MatButtonModule, MatIconModule, MatInputModule, MatListModule, MatCardModule } from '@angular/material';
+
+/* Services */
+import { DataService } from './services/data.service';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
@@ -25,6 +29,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     BrowserModule,
     FormsModule,
     BrowserAnimationsModule,
+    HttpModule,
     MatButtonModule, MatIconModule, MatInputModule, MatListModule, MatCardModule,
     RouterModule.forRoot([
       {
@@ -41,7 +46,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
       }
     ])
   ],
-  providers: [],
+  providers: [ DataService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
