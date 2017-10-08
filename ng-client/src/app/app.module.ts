@@ -4,7 +4,7 @@ import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpModule } from '@angular/http';
-
+import { DialogsModule } from './modules/dialogs/dialogs.module';
 /* Angular Material */
 import { MatButtonModule, MatIconModule, MatInputModule, MatListModule, MatCardModule } from '@angular/material';
 
@@ -30,6 +30,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     FormsModule,
     BrowserAnimationsModule,
     HttpModule,
+    DialogsModule,
     MatButtonModule, MatIconModule, MatInputModule, MatListModule, MatCardModule,
     RouterModule.forRoot([
       {
